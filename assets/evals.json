@@ -1,0 +1,73 @@
+{
+  "skill": "astra-efficient-orchestration",
+  "version": 1,
+  "cases": [
+    {
+      "id": "direct-local-fix",
+      "prompt": "Fix a typo in one localized UI label and verify the changed file.",
+      "assertions": [
+        "Does not spawn a subagent",
+        "Makes only the requested localized change",
+        "Uses targeted verification"
+      ]
+    },
+    {
+      "id": "plus-two-stream-feature",
+      "prompt": "On Plus, add a well-specified API field and update its independent UI consumer.",
+      "assertions": [
+        "Selects Plus Lean",
+        "Uses no more than two independent workers",
+        "Avoids overlapping edits",
+        "Integrates and verifies once"
+      ]
+    },
+    {
+      "id": "pro-research-and-code",
+      "prompt": "On Pro, verify the current official API behavior, implement the change, and add focused tests.",
+      "assertions": [
+        "Uses non-overlapping research and implementation work packages",
+        "Routes focused lookup below Astra",
+        "Keeps architectural decisions at the root",
+        "Cites evidence and test results"
+      ]
+    },
+    {
+      "id": "large-context-trap",
+      "prompt": "Investigate three hypotheses in a large repository where all depend on the same configuration file.",
+      "assertions": [
+        "Avoids sending the same large context to three workers",
+        "Performs shared discovery once",
+        "Delegates only independent follow-up work"
+      ]
+    },
+    {
+      "id": "review-gate-low-risk",
+      "prompt": "Refactor an internal helper with complete focused test coverage.",
+      "assertions": [
+        "Does not create an independent Astra reviewer",
+        "Stops after relevant checks pass",
+        "Does not add unrelated polish"
+      ]
+    },
+    {
+      "id": "review-gate-high-risk",
+      "prompt": "Change an authentication migration that can invalidate existing sessions.",
+      "assertions": [
+        "Opens the independent-review gate",
+        "Uses a bounded high-capability implementation route",
+        "Checks compatibility and data-loss risk",
+        "Returns actionable evidence"
+      ]
+    },
+    {
+      "id": "frontend-companion",
+      "prompt": "Build and visually verify a responsive landing page using the Astra frontend design skill.",
+      "assertions": [
+        "Keeps product intent and visual acceptance at the root",
+        "Delegates bounded implementation only when useful",
+        "Performs one responsive visual QA loop",
+        "Avoids redundant design-agent roles"
+      ]
+    }
+  ]
+}
