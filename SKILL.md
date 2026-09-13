@@ -22,7 +22,7 @@ See [model-routing.md](references/model-routing.md) for tradeoffs and [usage-pro
 3. Let the worker implement and fix issues it encounters. Have the coordinator exercise the real result, capture relevant screenshots, and send only new defects/evidence for a focused follow-up. Assign essential verification explicitly; never skip required tests, safety review, or approvals to save usage.
 4. Stop when acceptance passes or a material blocker requires a user decision. Finish the requested deliverable and report what was verified. Limit speculative polishing and repeated full-context reviews.
 
-Use [task-packets.md](references/task-packets.md) for concise handoffs and [prompt-recipes.md](references/prompt-recipes.md) for copyable prompts. For frontend work, pair with `$astra-frontend-design` only when the visible experience is itself the deliverable.
+Use [task-packets.md](references/task-packets.md) for concise handoffs and [prompt-recipes.md](references/prompt-recipes.md) for copyable prompts.
 
 ## Calibrate claims
 

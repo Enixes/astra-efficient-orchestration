@@ -28,7 +28,7 @@ Model selection and delegation depend on your Codex environment and permissions.
 For a bounded frontend build:
 
 ```text
-Use $astra-efficient-orchestration with $astra-frontend-design. If delegation is permitted, let a small coordinator give one Astra worker the original brief for the complete implementation. Reuse that worker for fixes; test in the browser and send screenshots plus concrete defects. Preserve required tests and stop when acceptance passes.
+Use $astra-efficient-orchestration. If delegation is permitted, let a small coordinator give one Astra worker the original brief for the complete implementation. Reuse that worker for fixes; test in the browser and send screenshots plus concrete defects. Preserve required tests and stop when acceptance passes.
 ```
 
 For quality-first or hard-to-test work:

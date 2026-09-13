@@ -5,7 +5,7 @@ Replace bracketed fields and preserve the user's original brief. These invoke de
 ## Bounded visual build: small coordinator
 
 ```text
-Use $astra-efficient-orchestration with $astra-frontend-design. If delegation is available, coordinate with Luna xhigh (or Terra/Sol if QA is difficult) and give one Astra low-effort worker the original product brief and assets for the whole implementation. Keep that worker's thread for focused fixes. You own browser testing, screenshots, and final acceptance; send concrete observed defects back without prescribing technical solutions. Preserve required checks and permissions. If the route is unavailable or the result cannot be judged reliably, use direct Astra.
+Use $astra-efficient-orchestration. If delegation is available, coordinate with Luna xhigh (or Terra/Sol if QA is difficult) and give one Astra low-effort worker the original product brief and assets for the whole implementation. Keep that worker's thread for focused fixes. You own browser testing, screenshots, and final acceptance; send concrete observed defects back without prescribing technical solutions. Preserve required checks and permissions. If the route is unavailable or the result cannot be judged reliably, use direct Astra.
 ```
 
 ## Quality-first or hard-to-test task
