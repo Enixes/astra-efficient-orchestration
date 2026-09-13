@@ -1,72 +1,68 @@
 {
   "skill": "astra-efficient-orchestration",
-  "version": 1,
+  "version": 2,
   "cases": [
     {
-      "id": "direct-local-fix",
-      "prompt": "Fix a typo in one localized UI label and verify the changed file.",
+      "id": "direct-small",
+      "prompt": "Fix a typo in a localized UI label.",
       "assertions": [
-        "Does not spawn a subagent",
-        "Makes only the requested localized change",
-        "Uses targeted verification"
+        "Chooses direct work",
+        "Does not create ceremonial agents",
+        "Verifies the changed surface"
       ]
     },
     {
-      "id": "plus-two-stream-feature",
-      "prompt": "On Plus, add a well-specified API field and update its independent UI consumer.",
+      "id": "bounded-visual",
+      "prompt": "On Plus, build a polished room planner with synchronized 2D and 3D views and browser-test the result.",
       "assertions": [
-        "Selects Plus Lean",
-        "Uses no more than two independent workers",
-        "Avoids overlapping edits",
-        "Integrates and verifies once"
+        "When delegation is authorized and available, considers a small coordinator with one continuing Astra implementation worker",
+        "Preserves the original product brief",
+        "Coordinator tests and sends screenshots with concrete failures",
+        "Does not route all creative implementation to Luna"
       ]
     },
     {
-      "id": "pro-research-and-code",
-      "prompt": "On Pro, verify the current official API behavior, implement the change, and add focused tests.",
+      "id": "ambitious-system",
+      "prompt": "On Pro, plan and implement a multi-service application with difficult integration and migration risk.",
       "assertions": [
-        "Uses non-overlapping research and implementation work packages",
-        "Routes focused lookup below Astra",
-        "Keeps architectural decisions at the root",
-        "Cites evidence and test results"
+        "Uses Astra judgment for planning and consequential decisions",
+        "Does not assume small coordinator is sufficient",
+        "Assigns required integration and safety checks"
       ]
     },
     {
-      "id": "large-context-trap",
-      "prompt": "Investigate three hypotheses in a large repository where all depend on the same configuration file.",
+      "id": "quality-first",
+      "prompt": "Build a high-stakes, hard-to-test workflow where correctness is more important than usage.",
       "assertions": [
-        "Avoids sending the same large context to three workers",
-        "Performs shared discovery once",
-        "Delegates only independent follow-up work"
+        "Prefers direct or Astra-led work",
+        "Does not trade away required verification for cost"
       ]
     },
     {
-      "id": "review-gate-low-risk",
-      "prompt": "Refactor an internal helper with complete focused test coverage.",
+      "id": "unavailable-delegation",
+      "prompt": "Optimize model usage on a bounded frontend, but this environment does not permit subagents.",
       "assertions": [
-        "Does not create an independent Astra reviewer",
-        "Stops after relevant checks pass",
-        "Does not add unrelated polish"
+        "Does not spawn agents",
+        "Uses a direct capable route",
+        "Does not claim a delegated cost saving"
       ]
     },
     {
-      "id": "review-gate-high-risk",
-      "prompt": "Change an authentication migration that can invalidate existing sessions.",
+      "id": "qa-feedback",
+      "prompt": "The first delegated product build has a clipping bug at 1100x760 and broken selection; screenshot attached.",
       "assertions": [
-        "Opens the independent-review gate",
-        "Uses a bounded high-capability implementation route",
-        "Checks compatibility and data-loss risk",
-        "Returns actionable evidence"
+        "Returns evidence to the existing worker thread if useful",
+        "Does not prescribe a speculative technical fix",
+        "Continues until acceptance passes or reports a blocker"
       ]
     },
     {
-      "id": "frontend-companion",
-      "prompt": "Build and visually verify a responsive landing page using the Astra frontend design skill.",
+      "id": "usage-claims",
+      "prompt": "Will this routing definitely halve my Plus quota consumption?",
       "assertions": [
-        "Keeps product intent and visual acceptance at the root",
-        "Delegates bounded implementation only when useful",
-        "Performs one responsive visual QA loop",
-        "Avoids redundant design-agent roles"
+        "Does not equate API-equivalent cost with ChatGPT quota",
+        "Treats two examples as limited evidence",
+        "Suggests matched workload evaluation"
       ]
     }
   ]

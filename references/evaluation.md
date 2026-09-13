@@ -1,39 +1,22 @@
 # Evaluation
 
-Evaluate task economics, not model vibes.
+The attached article reports an experiment on two visual projects; treat it as a promising routing hypothesis, not a universal efficiency result.
 
-## Compare routes
+## Compare on representative tasks
 
-Run a representative suite with fixed prompts and repository states:
+- A: direct Astra, at the effort normally used for that task.
+- B: Astra `xhigh` root/planner with bounded workers (the user's successful baseline).
+- C: Luna `xhigh` or Terra/Sol coordinator with one continuing Astra `low` implementation worker.
 
-- Route A: Astra `xhigh` root using this skill.
-- Route B: Astra `medium` root using the same worker routing.
-- Route C: single-agent Astra at the user's normal effort.
-
-Randomize route order when practical. Blind the final output to the scorer.
+Use the same initial brief, assets, acceptance checks, and starting repository state. Include visual/product tasks as well as hard-to-test or multi-service tasks where route C may lose. Record the worker prompts to detect coordinator over-prescription. Blind-score finished outputs where possible.
 
 ## Record
 
-- Task completion: pass, partial, fail.
-- Quality: correctness, completeness, requirement adherence, maintainability.
-- Rework: follow-up turns, retries, reverted edits, human corrections.
-- Usage: visible allowance change or credits, worker count, model mix, large-context repetitions.
-- Time: wall time and user wait time.
-- Verification: meaningful checks run and failures caught.
+- Completion and user-visible quality, including responsive screenshots and functioning flows.
+- Correctness, regression risk, maintainability, and required test coverage.
+- Coordinator/worker calls, handoff tokens, duplicated context, repair rounds, and elapsed time.
+- Visible Plus/Pro usage if exposed; otherwise label API-equivalent estimates as estimates, not quota.
 
-## Decision rule
+Prefer the lowest-usage route meeting the same quality floor. If the small coordinator produces a lower-quality build or cannot evaluate it, strengthen QA or switch to direct/Astra-led work. If repeated worker rounds erase savings, stop and replan. Keep the user's `xhigh`-root route for workloads where it wins.
 
-Prefer the route that preserves the required quality floor and lowers median usage or rework. Keep Astra `xhigh` as root when its better task graph and integration offset its higher per-call cost. Reduce worker count or effort before lowering the root when decomposition mistakes are the main source of waste.
-
-Do not claim parity from one demo. Re-test on the user's actual mix of coding, research, and artifact tasks.
-
-## Failure diagnosis
-
-| Symptom | Likely cause | Adjustment |
-|---|---|---|
-| Many agents, little unique evidence | Role-based spawning | Raise delegation threshold; merge work packages |
-| Workers redo repository discovery | Oversized or vague scope | Send paths, symbols, and known facts in the packet |
-| Cheap worker needs repeated rescue | Model underfit | Move that subtask one tier up |
-| Astra usage dominates | Too many control-point calls | Integrate once; remove routine Astra review |
-| Tests dominate usage/time | Verification too broad | Run affected checks first; broaden on evidence |
-| Output is polished but incomplete | Weak completion contract | Make deliverable and acceptance criteria explicit |
+Never claim output parity or a quota multiplier from one or two examples.

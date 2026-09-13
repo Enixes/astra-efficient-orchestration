@@ -1,33 +1,23 @@
 # Model routing
 
-Check which models and effort levels the current harness exposes. Preserve the roles below when an exact model is unavailable.
+Choose by task risk and ease of judging the finished result. Check the models and effort levels actually available in the current environment.
 
-```mermaid
-flowchart TD
-    A["Astra xhigh root"] --> L["Luna: focused lookup"]
-    A --> T["Terra: routine production"]
-    A --> S["Sol: hard implementation"]
-    L --> I["Root integrates and verifies"]
-    T --> I
-    S --> I
-    I -->|"review gate only"| R["Independent Astra xhigh"]
-```
+| Route | Good fit | Main cost or risk |
+|---|---|---|
+| Direct Astra | Quality-first, coupled, small, or hard-to-test work | Strong model carries the full implementation and verification context |
+| Luna `xhigh` coordinator → Astra `low` worker | Bounded visual/product build with a clear brief and browser-testable outcome | QA or handoff may be weak; repeated rounds can erase savings |
+| Terra/Sol coordinator → Astra worker | Product work requiring more reliable planning or QA than Luna offers | More coordinator usage |
+| Astra `xhigh` planner/root → bounded workers | Ambitious plan, architecture, integration, high-risk or hard-to-test work | Expensive root context and over-delegation can dominate |
 
-| Work | Preferred route | Use when | Avoid when |
-|---|---|---|---|
-| Scope, decompose, arbitrate, integrate | Astra `xhigh` | Decisions affect the whole run | The task is routine and already well specified |
-| Search, inventory, extract, classify, locate symbols, focused documentation lookup | Luna `max` | Output is bounded and evidence-based | Architectural synthesis or ambiguous product judgment is required |
-| Routine code, documents, transformations, targeted tests | Terra `high` | Requirements and touched surface are clear | The subtask is unusually complex or high stakes |
-| Difficult implementation, debugging, migrations, complex tests | Sol `high` | A bounded task still needs strong coding or reasoning | Luna or Terra can meet the same acceptance criteria |
-| Independent consequential review | Astra `xhigh` | The SKILL.md review gate opens | The change is low risk, local, and covered by tests |
+The small coordinator is *glue and QA*, not the design or architecture authority. Keep the original product brief intact in the worker handoff. Send screenshots and observed failures, not a preselected implementation strategy. A capable worker should implement the main experience; use Luna/Terra for narrow lookup, mechanical edits, or checks only when these tasks are genuinely separable.
 
-## Fallback order
+If the work is security-, privacy-, finance-, migration-, or data-loss-sensitive, do not use a cheap coordinator as a substitute for adequate judgment or required review. No route permits delegation contrary to user or environment instructions.
 
-- If Luna is unavailable, use Terra at the lowest sufficient effort.
-- If Terra is unavailable, use Sol for production work and tighten the task packet.
-- If Sol is unavailable, use Astra for the hard worker task but reduce worker count and prevent duplicated context.
-- If effort cannot be selected, keep the model role and control cost through scope, context, and agent count.
+## Fallbacks
 
-## Routing principle
+- If Astra worker delegation is unavailable, use direct Astra or the best available single agent; do not claim the delegated route ran.
+- If the coordinator cannot inspect the result, choose a stronger coordinator or direct Astra.
+- If an effort label is unavailable, preserve the role distinction and measure actual outcomes instead of equating labels.
+- If the worker needs repeated full-context rescue, switch routes rather than persisting with a superficially cheap call.
 
-Choose for one-pass success, not the lowest per-token rate. A worker that predictably fails and triggers a second full-context attempt is often the expensive route.
+Do not assume API token pricing maps directly to Plus/Pro usage allowances.

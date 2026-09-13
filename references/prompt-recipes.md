@@ -1,37 +1,27 @@
 # Prompt recipes
 
-## Plus default
+Replace bracketed fields and preserve the user's original brief. These invoke delegation only when allowed by the user and environment.
+
+## Bounded visual build: small coordinator
 
 ```text
-Use $astra-efficient-orchestration in Plus Lean mode. Keep GPT-6 Astra xhigh as the root orchestrator when selectable. Complete the task directly if delegation would cost more than it saves; otherwise use one bounded worker wave, integrate once, and run targeted verification.
+Use $astra-efficient-orchestration with $astra-frontend-design. If delegation is available, coordinate with Luna xhigh (or Terra/Sol if QA is difficult) and give one Astra low-effort worker the original product brief and assets for the whole implementation. Keep that worker's thread for focused fixes. You own browser testing, screenshots, and final acceptance; send concrete observed defects back without prescribing technical solutions. Preserve required checks and permissions. If the route is unavailable or the result cannot be judged reliably, use direct Astra.
 ```
 
-## Pro default
+## Quality-first or hard-to-test task
 
 ```text
-Use $astra-efficient-orchestration in Pro Balanced mode. Keep GPT-6 Astra xhigh at scoping and integration. Parallelize only independent work packages, use the least expensive capable worker for each, and open a separate Astra review only if the risk gate is met.
+Use $astra-efficient-orchestration. Prioritize correctness and quality: use direct Astra for the implementation and required verification. Delegate only independent support tasks that clearly reduce time or risk.
 ```
 
-## Near the limit
+## Ambitious multi-step project
 
 ```text
-Use $astra-efficient-orchestration in Emergency Conserve mode. Preserve correctness and the requested deliverable, minimize duplicated context and agent count, skip optional polish, and prefer focused Luna or Terra workers over additional Astra calls.
+Use $astra-efficient-orchestration. Let Astra xhigh determine the plan, key decisions, and acceptance conditions. Keep a durable plan; delegate bounded implementation to a capable worker only when it improves the total run. Use a coordinator that can execute the plan and verify results. Do not fragment one coherent product experience across low-capability implementers.
 ```
 
-## Coding
+## Compare with the user's proven route
 
 ```text
-Use $astra-efficient-orchestration to implement this change. Have Astra xhigh define touched surfaces and acceptance criteria, route routine edits to Terra and difficult bounded coding to Sol, then let the root integrate and run only relevant tests.
-```
-
-## Research
-
-```text
-Use $astra-efficient-orchestration for this research. Let Astra xhigh frame the decision and evidence standard, use Luna workers for non-overlapping focused lookups, and have the root synthesize one cited answer without repeating searches.
-```
-
-## Frontend work with the companion skill
-
-```text
-Use $astra-efficient-orchestration with $astra-frontend-design. Astra xhigh owns product intent, art direction, integration, and visual acceptance. Route bounded implementation and evidence gathering to the cheapest capable workers, then perform one responsive visual QA pass.
+Compare a direct/Astra-xhigh-root route with the small-coordinator → Astra-implementer route on the same brief and acceptance checks. Record quality, retries, elapsed time, and visible usage. Do not infer Plus/Pro quota from API-equivalent token cost.
 ```

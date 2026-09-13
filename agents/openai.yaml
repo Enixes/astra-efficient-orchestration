@@ -1,6 +1,6 @@
 interface:
   display_name: "Astra Efficient Orchestration"
-  short_description: "High-quality Astra work with less plan usage"
-  default_prompt: "Use $astra-efficient-orchestration to complete this task with the least plan usage that preserves output quality."
+  short_description: "Route Astra work by task quality and usage"
+  default_prompt: "Use $astra-efficient-orchestration to choose the least costly route that meets this task's quality and verification needs."
 policy:
-  allow_implicit_invocation: true
+  allow_implicit_invocation: false

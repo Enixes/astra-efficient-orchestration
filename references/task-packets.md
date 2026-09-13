@@ -1,38 +1,31 @@
 # Task packets
 
-A task packet is the main defense against duplicated context and retries.
+A handoff should preserve the goal, not compress the coordinator's taste into prescriptive design or architecture.
 
-## Required fields
-
-```text
-Objective: <one bounded result>
-Deliverable: <finding, patch, tests, or review>
-Scope: <paths, symbols, URLs, or questions>
-Context: <only facts needed to proceed>
-Constraints: <permissions, style, compatibility, non-goals>
-Acceptance: <observable success conditions>
-Stop: <when to stop searching or editing>
-Return: <evidence, changed paths, checks, blockers>
-```
-
-## Explorer or researcher
+## Capable implementation worker
 
 ```text
-Investigate only <question> in <scope>. Return the smallest evidence set that lets the root decide. Cite file paths, symbols, commands, or authoritative URLs. Stop after the question is answered or after <bounded limit>; report uncertainty instead of broadening the search. Do not edit files and do not spawn child agents.
+Implement the user's brief below in one continuous thread. Use the existing project constraints and attached references. Own implementation decisions and fix issues you notice. Finish when [observable acceptance]. Return changed paths and a brief summary. [State precisely which checks you own and which the coordinator will run.] Do not spawn child agents.
+
+User brief:
+[original brief, minimally edited]
+
+Project facts:
+[only relevant paths, assets, constraints]
 ```
 
-## Implementation worker
+For a follow-up, reuse the worker thread if its context remains useful:
 
 ```text
-Implement <change> only in <scope>. Preserve <constraints>. Success means <acceptance criteria>. Run <targeted checks> if available. Stop once the criteria pass; do not add unrelated improvements. Return changed paths, test results, assumptions, and blockers. Do not spawn child agents.
+On the current build, [observed behavior] at [viewport/action]. Here is the latest screenshot [attachment] and [console/test evidence]. Please fix the material issue while preserving the brief. Return only the changed paths and result.
 ```
 
-## Independent reviewer
+The coordinator exercises the deliverable, records concrete failures, captures relevant screenshots, and decides whether another round is worth its cost. Three rounds is a useful experimental ceiling for a bounded visual task, not a universal stop rule or a reason to ship a broken result.
+
+## Bounded support worker
 
 ```text
-Review the integrated result against <requirements and risk>. Look for consequential correctness, security, data-loss, compatibility, and missing-verification issues. Do not repeat style feedback or restate passing checks. Return only actionable findings with evidence, ordered by severity; say explicitly if none are found. Do not edit files unless asked.
+Answer [one question] in [specific scope] with paths or authoritative evidence. Stop once the decision is supported; do not implement, broaden the search, or spawn agents.
 ```
 
-## Follow-up repair
-
-Send the original worker the failing evidence and one correction objective. Do not resend the full conversation or reopen settled requirements.
+Only delegate when authorization permits it. Clearly allocate essential tests and reviews; never drop them because a worker packet asks for brevity.

@@ -1,39 +1,19 @@
 # Usage profiles
 
-These are soft ceilings. Use fewer agents whenever fewer will complete the task well.
+These are routing heuristics, not promises about plan limits or model availability.
 
-## Plus Lean — default when plan is unknown
+## Plus Lean
 
-- Root: GPT-6 Astra `xhigh` when selectable.
-- Direct tasks: no subagents.
-- Orchestrated tasks: one delegation wave, normally one worker and at most two concurrent workers.
-- Follow-up: reuse a worker for one focused correction before creating another agent.
-- Review: root review by default; independent Astra review only when the review gate opens.
-- Verification: the narrowest meaningful check for changed behavior.
-
-This profile protects a relatively small shared allowance by concentrating Astra usage at decomposition and integration.
+For bounded, testable implementation, consider one Astra `low` worker under a Luna `xhigh` coordinator. Keep the same worker for focused fixes, and have the coordinator browser-test and report back. If the task is small, coupled, or quality-first, use direct Astra instead. Do not open independent researchers or reviewers by default.
 
 ## Pro Balanced
 
-- Root: GPT-6 Astra `xhigh` when selectable.
-- Direct tasks: no subagents.
-- Orchestrated tasks: one delegation wave with one to three concurrent workers.
-- Second wave: allowed only for a gap discovered by the first wave, not as speculative breadth.
-- Review: independent Astra review for consequential or genuinely uncertain work.
-- Verification: affected checks first; broaden once when shared infrastructure or failures justify it.
+Choose the same route by task shape, not simply because Pro has a larger allowance. Terra or Sol can coordinate when product QA is demanding. For ambitious work, use Astra `xhigh` to create the plan and preserve decisions; use an Astra worker for the quality-critical build and smaller models only for bounded supporting tasks.
 
-Pro's larger limit buys throughput, not permission to duplicate work.
+## Emergency Conserve
 
-## Emergency conserve
+Finish the requested result. Avoid speculative parallel agents, repeated broad tests, redundant screenshots, and independent review unless risk warrants them. Use a small coordinator only when it can actually evaluate the worker and is authorized to delegate. Otherwise prefer a direct, focused run.
 
-Use when the user is near a reset or explicitly asks to minimize usage.
+## User-specific override
 
-- Finish the current deliverable before optional work.
-- Use no independent review unless the change is consequential.
-- Route retrieval, classification, repository mapping, and mechanical edits to Luna or Terra.
-- Prefer one strong task packet over several exploratory workers.
-- Avoid image generation, broad retrieval, and repeated large test suites unless required by the task.
-
-## Choosing a profile
-
-Ask about plan or remaining budget only if it would materially change the route. Otherwise infer from context, state the selected profile briefly, and proceed.
+If the user's measured tasks favor Astra `xhigh` at the root, keep that profile as the default for comparable work. Test a small-coordinator route on representative tasks before changing the default. Ask about remaining quota only when it materially changes the route.

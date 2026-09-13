@@ -1,25 +1,17 @@
 # Research basis
 
-Checked 2026-09-12. Recheck current plan and model documentation before relying on exact limits or rates.
+Updated 2026-09-13. Exact model availability, effort labels, pricing, and ChatGPT plan allowances may change.
 
-## Official guidance used
+## User-provided experiment
 
-- [GPT-6 Astra model guidance](https://developers.openai.com/api/docs/guides/latest-model?model=gpt-6-astra) says Astra is strong on multistep work, can use fewer output tokens per task than earlier models, supports multi-agent orchestration, is sensitive to skills and `AGENTS.md`, may delegate less unless prompted, and can over-test small coding changes.
-- [Rethinking skills and prompts for GPT-6 Astra](https://developers.openai.com/blog/rethinking-skills-and-prompts-for-gpt-6-astra) recommends short skill descriptions, progressive disclosure, and auditing overlapping instructions rather than loading large skill stacks.
-- [ChatGPT pricing](https://learn.chatgpt.com/docs/pricing) says Plus and Pro share usage across ChatGPT Work and Codex; usage depends on model, context, reasoning, tools, retrieval, and caching. It recommends precise prompts, limited source material, smaller `AGENTS.md`, fewer MCP servers, and smaller models for routine work.
+[“The Idiot Boss approach to getting more Astra/Fable quota”](https://x.com/anshuc/article/2098811738674147520) is the attached article. It compares direct Astra, Astra planning with Luna-heavy implementation, and a Luna coordinator with a single Astra implementation worker on a room-planning studio and a 3D robot scene. The author reports that delegating most implementation to Luna lowered visual quality and raised API-equivalent cost, while using Luna to coordinate and browser-test a continuing Astra worker preserved much of the visual quality at less than half the estimated cost and roughly 30% less time in those examples.
 
-## Dated cost signal
+The article explicitly says OpenAI and Anthropic do not disclose a direct quota conversion. Its API-cost-as-quota assumption is a proxy, not established plan accounting. The two visual tasks are not evidence of general correctness or output parity. The author also recommends direct strong-model work when quality is paramount, strong-model planning for ambitious tasks, and a more capable coordinator when the product is hard to test.
 
-The 2026-09-12 credit table lists per-million-token rates of Astra 250 input / 25 cached / 1250 output; Sol 100 / 10 / 500; Terra 50 / 5 / 300; and Luna 5 / 0.5 / 30. This supports a tiered router, but exact rates are not embedded in the runtime rules because they can change.
+## Other context
 
-## User evidence incorporated
+- [OpenAI's Astra skill/prompt guidance](https://developers.openai.com/blog/rethinking-skills-and-prompts-for-gpt-6-astra) recommends short activation descriptions, progressive disclosure, and avoiding overprescriptive instructions.
+- The user previously reported better output and usage with Astra `xhigh` as an orchestrator. This skill retains that as a workload-specific option rather than overriding it with the article's visual-task route.
+- The user's earlier agent-tree diagram remains a possible plan for separable work, but its Luna/Sol implementation preference should not automatically govern a coherent, quality-critical frontend.
 
-The user's supplied agent-tree diagram proposed an Astra root, Luna exploration and research, Sol implementation, Astra integration, and conditional Astra review. The user also reported that Astra `xhigh` as root produced better output and usage than lower-effort orchestration in their testing.
-
-This skill adopts `xhigh` as the root policy and changes the original tree in three ways:
-
-1. It adds Terra for routine production work between Luna and Sol.
-2. It uses soft plan-specific concurrency ceilings.
-3. It makes independent Astra review conditional rather than automatic.
-
-The resulting claim is a testable hypothesis: better root decisions can reduce total retries and context duplication enough to offset the root's higher effort. The evaluation suite is required before claiming parity for a specific workload.
+Evaluate comparable tasks and actual visible usage before making a general claim about Plus or Pro.
